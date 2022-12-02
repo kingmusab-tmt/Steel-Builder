@@ -1,0 +1,1286 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    box-sizing: border-box;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: minmax(4rem, 1fr) repeat(8, minmax(min-content, 16rem))
+    minmax(4rem, 1fr);
+    grid-template-rows: repeat(2, min-content) 80vh repeat(4, min-content);
+    /* grid-row-gap: .3rem; */
+    margin-top: 1rem;
+    z-index: 100;
+}
+.navigation{
+    grid-column: 2/10;
+    grid-row: 1 / 2;
+    background-color: crimson;
+}
+.navigation-item{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    margin: 1rem 0;
+    list-style: none;
+}
+.navigation-list-link{
+    text-align: center;
+    display: grid;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: #fff;
+    padding: .8rem 0;
+    font-weight: bold;
+    transition: border-bottom .1s cubic-bezier(.55, 0, .90, .54);;
+    
+}
+.navigation-list:hover .navigation-list-link{
+    background-color: #fff;
+    color: crimson;
+    width: 100%;
+    height: 100%;
+    border-bottom: .2rem solid crimson;
+}
+.header{
+    grid-column: 6/10;
+    grid-row: 3/4 ;
+    position: relative;
+    z-index: -50;
+    background-image: linear-gradient(rgba(146, 129, 129, 0.8), rgba(202, 194, 194, 0.8)), url("images/header-other-side.png");
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size:cover;
+  
+}
+
+.header-banner{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translate(-10%, -50%);
+    text-transform: uppercase;
+    text-align: center;
+    /* z-index: -50; */
+    transition: all .2s cubic-bezier(0.075, 0.82, 0.165, 1);
+    
+}
+.header-title{
+    font-size: 5rem;
+    color: crimson;
+    margin-bottom: 1rem;
+}
+
+.header-paragraph{
+    font-size: 3rem;
+}
+.header-image{
+    grid-column: 2/6;
+    grid-row: 3/4 ;
+    position: relative;
+}
+.header-img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    text-align: center;
+    transition: all .2s cubic-bezier(.70, 1, .98, .80);
+}
+.header-img:hover{
+    transform: translate(-70%, -50%)
+}
+
+.about{
+    margin-top: 1.2rem;
+    padding: 1rem;
+    grid-column: 2/10;
+    grid-row: 4/5;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(2, min-content);
+    grid-gap: 1.2rem;
+    position: relative;
+}
+.flip-card{
+    grid-column: 1/7;
+    grid-row: 1/-1;
+    background-color: transparent;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    /* margin: 3rem; */
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+  .flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side (fallback if image is missing) */
+  .flip-card-front {
+    background-color: rgb(243, 234, 234);
+    box-shadow: -1rem 2rem 2rem rgba(214, 14, 14, 0.808);
+    color: black;
+    border-radius: 10px;
+    
+  }
+  
+  /* Style the back side */
+  .flip-card-back {
+    background-color: rgb(226, 198, 198);
+    color: crimson;
+    border-radius: 10px;
+    padding-right: 3rem;
+    box-shadow: 0 1rem 2rem rgba(105, 12, 12, 0.3);
+    transform: rotateY(180deg);
+  }
+.about-heading{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    align-self: centre;
+    /* display: grid; */
+    text-align: center;
+    font-size: 10rem;
+    color: crimson;
+    text-shadow: .6rem .5rem .4rem skyblue;
+}
+.about-paragraph{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+}
+.about-img{
+    width: 100%;
+    box-shadow: .5rem .2rem 1rem crimson
+}
+.about-img-1{
+    grid-column: 7/9;
+}
+.about-img-2{
+    grid-column: 9/-1;
+}
+.about-img-3{
+    grid-column: 9/-1;
+    grid-row: 2/3;
+}
+.about-img-4{
+    grid-column: 7/9;
+    grid-row: 2/3;
+}
+.about-img-4:hover{
+    transform: rotate(15deg);
+}
+.about-img-2:hover{
+    transform: rotate(15deg);
+}
+.about-img-3:hover{
+    transform: rotate(15deg);
+}
+.about-img-1:hover{
+    transform: rotate(15deg);
+}
+.gallery{
+    grid-column: 2/10;
+    grid-row: 5/6;
+    display: grid;
+    grid-template-columns: repeat(10, minmax(1rem, 1fr));
+    grid-template-rows: repeat(7,10vw);
+    grid-gap: 1rem;
+    margin-top: 1rem;
+    padding: 1.6rem;
+}
+.gallery-heading{
+    text-align: center;
+    display: grid;
+    align-self: center;
+    grid-column: 1/-1;
+    grid-row: 1/2;
+    text-transform: uppercase;
+    font-size: 5rem;
+    color: crimson;
+    text-shadow: .6rem .5rem .4rem rgb(68, 73, 75);
+}
+.gallery-img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .5;
+    transition: opacity .5s;
+}
+.gallery-img:hover{
+    opacity: 1;
+}
+.g1{
+    grid-column: 1 /4;
+    grid-row: 2/4;
+}
+.g2{
+    grid-column: 4 /6;
+    grid-row: 2/4;
+}
+.g3{
+    grid-column: 6 / 8;
+    grid-row: 2/3;
+}
+.g4{
+    grid-column: 8 /-1;
+    grid-row: 2/5;
+}
+.g5{
+    grid-column: 6 /8;
+    grid-row: 3/6;
+}
+.g6{
+    grid-column: 1/4;
+    grid-row: 4/6;
+}
+.g8{
+    grid-column: 1 /4;
+    grid-row: 6/8;
+}
+.g21{
+    grid-column: 8 /11;
+    grid-row: 5/8;
+}
+.g12{
+    grid-column: 4 /6;
+    grid-row: 4/-1;
+}
+.g16{
+    grid-column: 6 /8;
+    grid-row: 6/8;
+}
+.contact{
+    grid-column: 2/10;
+    grid-row: 6/7;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: 1fr;
+}
+.contact-detail{
+    grid-column: 1/6;
+    grid-row: 1/2;
+    padding: 1rem;
+    box-shadow: .2rem .3rem .5rem rgba(204, 76, 76, 0.8);
+}
+
+.contact-form{
+    grid-column: 6/-1;
+    grid-row: 1/2;
+    padding: 2rem;
+    box-shadow: .2rem .3rem .5rem rgba(204, 76, 76, 0.8);
+}
+.contact-heading{
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1.6rem;
+    color: crimson;
+    text-shadow: .6rem .5rem .4rem rgb(124, 114, 108);
+}
+.contact-us-paragraph{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.contact-us-paragraph::after{
+    content: " ";
+    width: 100%;
+    height: .2rem;
+    background-color: crimson;
+    display: block;
+
+
+}
+.contact-us-detail{
+    font-size: 1.5rem;
+    list-style-type: none
+}
+.contact-us{
+    font-size: 2rem;
+    margin: 2rem;
+    padding-left: 5rem;
+}
+.opening-hour{
+    padding-left: 15rem;
+}
+.hours{
+    padding: .2rem;
+    color: crimson;
+}
+
+.contact-us-heading{
+    text-transform: uppercase;
+    align-self: center;
+    text-align: center;
+    color: crimson;
+    text-shadow: .6rem .5rem .4rem rgb(68, 73, 75);
+    
+}
+.social-icons{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    align-items: center;
+    text-align: center;
+}
+.social-icon{
+    font-size: 4rem;
+    color: crimson;
+    transition: all .2s;
+    text-align: center;
+}
+.social-icon:hover{
+    color: #34598f;
+    transform: rotateZ(360deg);
+}
+
+.footer{
+    grid-column: 2/10;
+    grid-row: 7/-1;
+    background-color: crimson;
+    /* margin: 1.6rem; */
+    text-align: center;
+    color: white;
+    font-size: 1.6rem;
+    padding: 1.2rem;
+}
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 4px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  input[type=email], select, textarea {
+    width: 100%; /* Full width */
+    padding: 4px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  input[type=submit] {
+    background-color: red;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  label{
+      font-size: 1.5rem;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  input[type=submit]:hover {
+    background-color: #a04545;
+  }
+  @media(max-width: 1000px){
+    .header-title{
+        font-size: 3rem;
+        color: crimson;
+        margin-bottom: 1rem;
+    }
+    
+    .header-paragraph{
+        font-size: 2rem;
+    }
+    .about-heading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        align-self: centre;
+        /* display: grid; */
+        text-align: center;
+        font-size: 7rem;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem skyblue;
+    }
+    .about-paragraph{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        font-size: 2.5rem;
+    }
+
+  }
+
+  @media (max-width: 800px){
+    .header-title{
+        font-size: 2rem;
+        color: crimson;
+        margin-bottom: 1rem;
+    }
+    
+    .header-paragraph{
+        font-size: 1rem;
+    }
+    .header-img{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        text-align: center;
+        transition: all .2s cubic-bezier(.70, 1, .98, .80);
+    }
+    .header-img:hover{
+        transform: translate(-70%, -50%)
+    }
+    .navigation-item{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+        margin: .5rem 0;
+        list-style: none;
+    }
+    .about-heading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        align-self: centre;
+        /* display: grid; */
+        text-align: center;
+        font-size: 5rem;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem skyblue;
+    }
+    .about-paragraph{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        font-size: 2.3rem;
+    }
+    .gallery-heading{
+        text-align: center;
+        display: grid;
+        align-self: center;
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        text-transform: uppercase;
+        font-size: 3rem;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem rgb(68, 73, 75);
+    }
+    .contact-us-detail{
+        font-size: 1.5rem;
+        list-style-type: none
+    }
+    .contact-us{
+        font-size: 2rem;
+        margin: 2rem;
+        padding-left: 1rem;
+    }
+    .opening-hour{
+        padding-left: 7rem;
+    }
+    .hours{
+        padding: .2rem;
+        color: crimson;
+    }
+    
+    .contact-us-heading{
+        text-transform: uppercase;
+        align-self: center;
+        text-align: center;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem rgb(68, 73, 75);
+        
+    }
+    .social-icons{
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+        align-items: center;
+        text-align: center;
+    }
+    .social-icon{
+        font-size: 4rem;
+        color: crimson;
+        transition: all .2s;
+        text-align: center;
+    }
+    
+    
+  }
+
+  @media (max-width:600px){
+    .container{
+        display: grid;
+        grid-template-columns: minmax(.5rem, 1fr) repeat(8, minmax(min-content, 16rem))
+        minmax(.5rem, 1fr);
+        grid-template-rows: repeat(2, min-content) 60vh repeat(4, min-content);
+        /* grid-row-gap: .3rem; */
+        margin-top: 1rem;
+        z-index: 100;
+    }
+    .header-img{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        text-align: center;
+        transition: all .2s cubic-bezier(.70, 1, .98, .80);
+    }
+    .header-img:hover{
+        transform: translate(-70%, -50%)
+    }
+    .navigation-item{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+        margin: .5rem 0;
+        list-style: none;
+    }
+    .navigation-list-link{
+        text-align: center;
+        display: grid;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: #fff;
+        padding: .8rem 0;
+        font-weight: bold;
+        transition: border-bottom .1s cubic-bezier(.55, 0, .90, .54);;
+        
+    }
+    .about{
+        margin-top: 1rem;
+        padding: 1rem;
+        grid-column: 2/10;
+        grid-row: 4/5;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(2, min-content);
+        grid-gap: .5rem;
+        position: relative;
+    }
+    .flip-card{
+        grid-column: 1/7;
+        grid-row: 1/-1;
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        /* margin: 3rem; */
+        perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    
+    }
+    .flip-card-inner {
+        position: relative;
+        width: 90%;
+        height: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+      }
+      
+      /* Style the front side (fallback if image is missing) */
+      .flip-card-front {
+        background-color: rgb(243, 234, 234);
+        box-shadow: -1rem 2rem 2rem rgba(214, 14, 14, 0.808);
+        color: black;
+        border-radius: 10px;
+        
+      }
+      
+      /* Style the back side */
+      .flip-card-back {
+        background-color: rgb(226, 198, 198);
+        color: crimson;
+        border-radius: 10px;
+        padding-right: 3rem;
+        box-shadow: 0 1rem 2rem rgba(105, 12, 12, 0.3);
+        transform: rotateY(180deg);
+      }
+    
+    .about-heading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        align-self: centre;
+        /* display: grid; */
+        text-align: center;
+        font-size: 3rem;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem skyblue;
+    }
+    .about-paragraph{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        font-size: 1.6rem;
+    }
+    .gallery{
+        grid-column: 2/10;
+        grid-row: 5/6;
+        display: grid;
+        grid-template-columns: repeat(10, minmax(1rem, 1fr));
+        grid-template-rows: repeat(7,10vw);
+        grid-gap: .5rem;
+        margin-top: 1rem;
+        padding: 1.6rem;
+    }
+    .gallery-heading{
+        text-align: center;
+        display: grid;
+        align-self: center;
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        text-transform: uppercase;
+        font-size: 2rem;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem rgb(68, 73, 75);
+    }
+    .contact{
+        grid-column: 2/10;
+        grid-row: 6/7;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 1fr;
+    }
+    .contact-detail{
+        grid-column: 1/6;
+        grid-row: 1/2;
+        padding: .5rem;
+        box-shadow: .2rem .3rem .5rem rgba(204, 76, 76, 0.8);
+    }
+    
+    .contact-form{
+        grid-column: 6/-1;
+        grid-row: 1/2;
+        padding: .5rem;
+        box-shadow: .2rem .3rem .5rem rgba(204, 76, 76, 0.8);
+    }
+    .contact-heading{
+        font-size: 3rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem rgb(124, 114, 108);
+    }
+    .contact-us-paragraph{
+        font-size: 1.5rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    .contact-us-paragraph::after{
+        content: " ";
+        width: 100%;
+        height: .2rem;
+        background-color: crimson;
+        display: block;
+    
+    
+    }
+    .contact-us-detail{
+        font-size: 1rem;
+        list-style-type: none
+    }
+    .contact-us{
+        font-size: 1.5rem;
+        margin: .5rem;
+        padding-left: 2rem;
+    }
+    .opening-hour{
+        padding-bottom: 5rem;
+        padding-left: 5rem;
+    }
+    .hours{
+        padding: .2rem;
+        color: crimson;
+    }
+    
+    .contact-us-heading{
+        text-transform: uppercase;
+        align-self: center;
+        text-align: center;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem rgb(68, 73, 75);
+        
+    }
+    .social-icons{
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+        align-items: center;
+        text-align: center;
+    }
+    .social-icon{
+        font-size: 4rem;
+        color: crimson;
+        transition: all .2s;
+        text-align: center;
+    }
+    .social-icon:hover{
+        color: #34598f;
+        transform: rotateZ(360deg);
+    }
+    
+
+  }
+
+  @media screen and (max-width: 480px){
+    .container{
+        display: grid;
+        grid-template-columns: minmax(.5rem, 1fr) repeat(8, minmax(min-content, 16rem))
+        minmax(.5rem, 1fr);
+        grid-template-rows: repeat(2, min-content) 40vh repeat(4, min-content);
+        /* grid-row-gap: .3rem; */
+        margin-top: 1rem;
+        z-index: 100;
+    }
+    .header-img{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        text-align: center;
+        transition: all .2s cubic-bezier(.70, 1, .98, .80);
+    }
+    .header-img:hover{
+        transform: translate(-70%, -50%)
+    }
+    .navigation-item{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+        margin: .5rem 0;
+        list-style: none;
+    }
+    .navigation-list-link{
+        text-align: center;
+        display: grid;
+        text-transform: uppercase;
+        font-size: 1rem;
+        text-decoration: none;
+        color: #fff;
+        padding: .8rem 0;
+        font-weight: bold;
+        transition: border-bottom .1s cubic-bezier(.55, 0, .90, .54);;
+        
+    }
+    .about{
+        margin-top: 1rem;
+        padding: 1rem;
+        grid-column: 2/10;
+        grid-row: 4/5;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(2, min-content);
+        grid-gap: .5rem;
+        position: relative;
+    }
+    .flip-card{
+        grid-column: 1/7;
+        grid-row: 1/-1;
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        /* margin: 3rem; */
+        perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    
+    }
+    .flip-card-inner {
+        position: relative;
+        width: 90%;
+        height: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+      }
+      
+      /* Style the front side (fallback if image is missing) */
+      .flip-card-front {
+        background-color: rgb(243, 234, 234);
+        box-shadow: -1rem 2rem 2rem rgba(214, 14, 14, 0.808);
+        color: black;
+        border-radius: 10px;
+        
+      }
+      
+      /* Style the back side */
+      .flip-card-back {
+        background-color: rgb(226, 198, 198);
+        color: crimson;
+        border-radius: 10px;
+        padding-right: 3rem;
+        box-shadow: 0 1rem 2rem rgba(105, 12, 12, 0.3);
+        transform: rotateY(180deg);
+      }
+    
+    .about-heading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        align-self: centre;
+        /* display: grid; */
+        text-align: center;
+        font-size: 2rem;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem skyblue;
+    }
+    .about-paragraph{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        font-size: 1.2rem;
+    }
+    .gallery{
+        grid-column: 2/10;
+        grid-row: 5/6;
+        display: grid;
+        grid-template-columns: repeat(10, minmax(1rem, 1fr));
+        grid-template-rows: repeat(7,10vw);
+        grid-gap: .5rem;
+        margin-top: 1rem;
+        padding: 1.6rem;
+    }
+    .gallery-heading{
+        text-align: center;
+        display: grid;
+        align-self: center;
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        text-transform: uppercase;
+        font-size: 2rem;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem rgb(68, 73, 75);
+    }
+    .contact{
+        grid-column: 2/10;
+        grid-row: 6/7;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 1fr;
+    }
+    .contact-detail{
+        grid-column: 1/6;
+        grid-row: 1/2;
+        padding: .2rem;
+        box-shadow: .2rem .3rem .5rem rgba(204, 76, 76, 0.8);
+    }
+    
+    .contact-form{
+        grid-column: 6/-1;
+        grid-row: 1/2;
+        padding: .5rem;
+        box-shadow: .2rem .3rem .5rem rgba(204, 76, 76, 0.8);
+    }
+    .contact-heading{
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem rgb(124, 114, 108);
+    }
+    .contact-us-paragraph{
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    .contact-us-paragraph::after{
+        content: " ";
+        width: 100%;
+        height: .2rem;
+        background-color: crimson;
+        display: block;
+    
+    
+    }
+    .contact-us-detail{
+        font-size: .2rem;
+        list-style-type: none
+    }
+    .contact-us{
+        font-size: 1.2rem;
+        margin: .2rem;
+        padding-left: 1.5rem;
+    }
+    .opening-hour{
+        padding-bottom: 5rem;
+        padding-left: 2rem;
+    }
+    .hours{
+        padding: .2rem;
+        color: crimson;
+    }
+    
+    .contact-us-heading{
+        text-transform: uppercase;
+        align-self: center;
+        text-align: center;
+        font-size: 1.5rem;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem rgb(68, 73, 75);
+        
+    }
+    .social-icons{
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+        align-items: center;
+        text-align: center;
+    }
+    .social-icon{
+        font-size: 3rem;
+        color: crimson;
+        transition: all .2s;
+        text-align: center;
+    }
+    .social-icon:hover{
+        color: #34598f;
+        transform: rotateZ(360deg);
+    }
+    
+    .footer{
+        grid-column: 2/10;
+        grid-row: 7/-1;
+        background-color: crimson;
+        /* margin: 1.6rem; */
+        text-align: center;
+        color: white;
+        font-size: 1.2rem;
+        padding: 1.2rem;
+    }
+  }
+
+  @media screen and (max-width: 380px){
+    .container{
+        display: grid;
+        grid-template-columns: minmax(.2rem, 1fr) repeat(8, minmax(min-content, 16rem))
+        minmax(.2rem, 1fr);
+        grid-template-rows: repeat(2, min-content) 30vh repeat(4, min-content);
+        /* grid-row-gap: .3rem; */
+        margin-top: 1rem;
+        z-index: 100;
+    }
+    .header-img{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        text-align: center;
+        transition: all .2s cubic-bezier(.70, 1, .98, .80);
+    }
+    .header-img:hover{
+        transform: translate(-70%, -50%)
+    }
+    .navigation-item{
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+        margin: .5rem 0;
+        list-style: none;
+    }
+    .navigation-list-link{
+        text-align: center;
+        display: grid;
+        text-transform: uppercase;
+        font-size: .6rem;
+        text-decoration: none;
+        color: #fff;
+        padding: .8rem 0;
+        font-weight: bold;
+        transition: border-bottom .1s cubic-bezier(.55, 0, .90, .54);;
+        
+    }
+    .header-title{
+        font-size: 1.2rem;
+        color: crimson;
+        margin-bottom: 1rem;
+    }
+    
+    .header-paragraph{
+        font-size: 1rem;
+    }
+    .about{
+        margin-top: 1rem;
+        padding: 1rem;
+        grid-column: 2/10;
+        grid-row: 4/5;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: repeat(2, min-content);
+        grid-gap: .5rem;
+        position: relative;
+    }
+    .flip-card{
+        grid-column: 1/7;
+        grid-row: 1/-1;
+        background-color: transparent;
+        width: 100%;
+        height: 100%;
+        border-radius: 5px;
+        /* margin: 3rem; */
+        perspective: 1000px; /* Remove this if you don't want the 3D effect */
+    
+    }
+    .flip-card-inner {
+        position: relative;
+        width: 90%;
+        height: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+      }
+      .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+      .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        -webkit-backface-visibility: hidden; /* Safari */
+        backface-visibility: hidden;
+      }
+      
+      /* Style the front side (fallback if image is missing) */
+      .flip-card-front {
+        background-color: rgb(243, 234, 234);
+        box-shadow: -1rem 2rem 2rem rgba(214, 14, 14, 0.808);
+        color: black;
+        border-radius: 10px;
+        
+      }
+      
+      /* Style the back side */
+      .flip-card-back {
+        background-color: rgb(226, 198, 198);
+        color: crimson;
+        border-radius: 10px;
+        padding-right: 3rem;
+        box-shadow: 0 1rem 2rem rgba(105, 12, 12, 0.3);
+        transform: rotateY(180deg);
+      }
+    
+    .about-heading{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        align-self: centre;
+        /* display: grid; */
+        text-align: center;
+        font-size: 2.5rem;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem skyblue;
+    }
+    .about-paragraph{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%);
+        font-size: .8rem;
+    }
+    .gallery{
+        grid-column: 2/10;
+        grid-row: 5/6;
+        display: grid;
+        grid-template-columns: repeat(10, minmax(1rem, 1fr));
+        grid-template-rows: repeat(7,10vw);
+        grid-gap: .5rem;
+        margin-top: 1rem;
+        padding: 1.6rem;
+    }
+    .gallery-heading{
+        text-align: center;
+        display: grid;
+        align-self: center;
+        grid-column: 1/-1;
+        grid-row: 1/2;
+        text-transform: uppercase;
+        font-size: 2rem;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem rgb(68, 73, 75);
+    }
+    .contact{
+        grid-column: 2/10;
+        grid-row: 6/7;
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        grid-template-rows: 1fr;
+    }
+    .contact-detail{
+        grid-column: 1/6;
+        grid-row: 1/2;
+        padding: .2rem;
+        box-shadow: .2rem .3rem .5rem rgba(204, 76, 76, 0.8);
+    }
+    
+    .contact-form{
+        grid-column: 6/-1;
+        grid-row: 1/2;
+        padding: 1rem;
+        box-shadow: .2rem .3rem .5rem rgba(204, 76, 76, 0.8);
+    }
+    .contact-heading{
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem rgb(124, 114, 108);
+    }
+    .contact-us-paragraph{
+        font-size: 1.2rem;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+    .contact-us-paragraph::after{
+        content: " ";
+        width: 100%;
+        height: .2rem;
+        background-color: crimson;
+        display: block;
+    }
+    .contact-us-detail{
+        font-size: .2rem;
+        list-style-type: none
+    }
+    .contact-us{
+        font-size: 1.2rem;
+        margin: .2rem;
+        padding-left: 1.2rem;
+    }
+    .opening-hour{
+        padding-bottom: 5rem;
+        padding-left: 1.5rem;
+    }
+    .hours{
+        padding: .2rem;
+        color: crimson;
+    }
+    
+    .contact-us-heading{
+        text-transform: uppercase;
+        align-self: center;
+        text-align: center;
+        font-size: 1.5rem;
+        color: crimson;
+        text-shadow: .6rem .5rem .4rem rgb(68, 73, 75);
+        
+    }
+    .social-icons{
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(2rem, 1fr));
+        align-items: center;
+        text-align: center;
+    }
+    .social-icon{
+        font-size: 3rem;
+        color: crimson;
+        transition: all .2s;
+        text-align: center;
+    }
+    .social-icon:hover{
+        color: #34598f;
+        transform: rotateZ(360deg);
+    }
+    
+    .footer{
+        grid-column: 2/10;
+        grid-row: 7/-1;
+        background-color: crimson;
+        /* margin: 1.6rem; */
+        text-align: center;
+        color: white;
+        font-size: 1.2rem;
+        padding: 1.2rem;
+    }
+  }
+
+
+
+
+
+
+
+
